@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PUMP NEXUS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23040a16' width='32' height='32'/><text y='22' x='4' font-size='16' fill='%2300e5ff'>P</text></svg>" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">PUMP</span>
+      <span class="sub">NEXUS</span>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button data-tab="radar" class="active">Radar</button>
+      <button data-tab="new">New</button>
+      <button data-tab="live">Live</button>
+      <button data-tab="watch">Watch</button>
+      <button data-tab="majors">Majors</button>
+    </nav>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Search mint / ticker" autocomplete="off" />
+    </div>
+    <div class="relay-pill">
+      <span class="dot" id="relayDot"></span>
+      <span id="relayLabel">CONNECTING</span>
+      <span class="sol" id="solPrice">SOL —</span>
+    </div>
+  </header>
+
+  <section class="kpis">
+    <article>
+      <label>CLUSTER CAP</label>
+      <strong id="kpiCap">—</strong>
+      <em>visible cluster</em>
+    </article>
+    <article>
+      <label>LIVE STREAMS</label>
+      <strong id="kpiLive">—</strong>
+      <em>pump.fun relay</em>
+    </article>
+    <article>
+      <label>AVG SCORE</label>
+      <strong id="kpiScore">—</strong>
+      <em>pump intensity</em>
+    </article>
+    <article class="channel">
+      <label>CHANNEL</label>
+      <strong id="kpiChannel">IDLE</strong>
+      <em id="kpiSource">waiting for coins</em>
+    </article>
+  </section>
+
+  <main class="board">
+    <aside class="feed-panel">
+      <div class="panel-h">
+        <span class="lights"><i></i><i></i><i></i></span>
+        UX FEED
+        <span class="muted" id="feedCount">0 signals</span>
+      </div>
+      <div class="feed" id="feed"></div>
+    </aside>
+
+    <section class="mid">
+      <div class="panel-h">
+        <span class="lights"><i></i><i></i><i></i></span>
+        UXFILE UI COMPONENTS
+      </div>
+      <pre class="code" id="codePane"></pre>
+      <div class="mid-foot">
+        <span>mode / telemetry</span>
+        <span id="midSymbol">—</span>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="constellation-card">
+        <div class="panel-h">
+          <span class="lights"><i></i><i></i><i></i></span>
+          UX CONNECTION
+        </div>
+        <canvas id="constellation" width="360" height="160"></canvas>
+        <div class="const-foot"><span>constellation</span><span>click node</span></div>
+      </div>
+      <div class="detail-card" id="detail">
+        <div class="panel-h">
+          <span class="lights"><i></i><i></i><i></i></span>
+          UX CROSSSECTION
+        </div>
+        <p class="empty">Select a signal in the feed.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="tape" id="tape"></footer>
+  <p class="disclaimer">Read-only research UI. Not financial advice. Not affiliated with pump.fun.</p>
+  <script src="app.js"></script>
+</body>
+</html>
